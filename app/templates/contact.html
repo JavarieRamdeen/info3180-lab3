@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="contact">
+    <h1>Contact Form</h1>
+    <hr>
+    <div class="form_container">
+        <p>Fill in this fform to contact the site owners</p>
+        <form method="post">
+            {{ form.csrf_token }}
+            <div class="form-floating">
+              {{ form.name(placeholder="Your name") }}
+              {{ form.name.label }}
+            </div>
+            <div class="form-floating">
+              {{ form.email(placeholder="Your e-mail ...") }}
+              {{ form.email.label }}
+            </div>
+            <div class="form-floating">
+              {{form.subject(placeholder="Your subject ...")}}
+              {{ form.subject.label }}
+            </div>
+            <div class="form-floating">
+              {{ form.message(placeholder="Write your request ...") }}
+              {{ form.message.label }}
+            </div>
+            <div class="form-group">
+              {{ form.submit}}
+            </div>
+          </form>
+    </div>
+</div>
+{% endblock %}
